@@ -3,12 +3,12 @@ import React from "react";
 import { CgMenuRound } from "react-icons/cg";
 import { ImSearch } from "react-icons/im";
 import { Input } from "@nextui-org/input";
-import { Indie_Flower } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import CoderStudent from "../../../public/coder.png";
 
-const indieFlower = Indie_Flower({ subsets: ["latin"], weight: ["400"] });
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 
 const Browser = () => {
   return (
@@ -20,8 +20,8 @@ const Browser = () => {
       className="flex flex-col justify-center items-center w-full"
     >
       {/*-----------BROWSER SEARCH TAB------------- */}
-      <div className="flex justify-between items-center p-4 gap-5 sm:w-5/6 w-11/12 h-16 bg-gradient-to-b from-purple-950  to-violet-600 rounded-t-lg">
-        <CgMenuRound className="text-3xl font-semibold" />
+      <div className="flex flex-wrap justify-between items-center p-4 gap-5 sm:w-5/6 w-11/12 h-16 bg-gradient-to-b from-purple-950  to-violet-600 rounded-t-lg">
+        <CgMenuRound className="text-3xl font-semibold text-slate-200" />
         <div className="w-3/4">
           <Input
             disabled={true}
@@ -40,7 +40,6 @@ const Browser = () => {
                 "bg-black",
                 "backdrop-blur-xl",
                 "backdrop-saturate-200",
-
                 "group-data-[focus=true]:bg-default-200/50",
                 "!cursor-text",
               ],
@@ -51,17 +50,31 @@ const Browser = () => {
             }
           />
         </div>
-        <h1
-          className={`text-2xl text-white font-semibold ${indieFlower.className}`}
-        >
+        <h1 className={`text-2xl text-white font-semibold ${bebas.className}`}>
           CoderHouse
         </h1>
       </div>
 
       {/*-----------BROWSER WINDOW TEXT------------- */}
-      <div className="relative  flex justify-between items-end p-4 gap-5 sm:w-5/6 w-11/12 h-[500px] bg-black">
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Image alt="Coder Student" src={CoderStudent} />
+      <div className="relative flex justify-between items-end p-4 gap-5 sm:w-5/6 w-11/12 h-[500px] bg-black">
+        <div
+          id="text"
+          className="absolute top-0 flex flex-col p-4 justify-center items-center gap-8"
+        >
+          <h1 className="text-4xl font-semibold text-purple-300 pr-10 pl-10">
+            Step into programming mastery
+          </h1>
+          <p className="text-white text-xl pr-10 pl-10">
+            Explore, create, and excel with our comprehensive coding platform.
+            Your journey to becoming a coding expert starts here!
+          </p>
+        </div>
+        <div className="absolute bottom-[-70px]">
+          <Image
+            alt="Coder Student"
+            src={CoderStudent}
+            className=" min-h-[150px] max-h-[401px] h-auto object-fill"
+          />
         </div>
       </div>
     </motion.div>
