@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
+import Navbar from "./components/NavBar";
 import "./globals.css";
 
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito_sans.className}`}>
       <body>
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider>
+          <Navbar />
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   );
